@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalCore | Protocollo Operativo 2026</title>
+    <title>DigitalCore | Protocollo & Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -12,7 +12,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .bg-dots { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px; }
-        .glow-emerald { box-shadow: 0 0 50px rgba(16, 185, 129, 0.3); }
+        .glow-emerald { box-shadow: 0 0 40px rgba(16, 185, 129, 0.25); }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
         
         #scratch-container { position: relative; width: 280px; height: 140px; margin: 0 auto; user-select: none; }
@@ -40,11 +40,17 @@
             <span class="font-black uppercase tracking-tighter text-lg hidden sm:block">Digital<span class="text-emerald-600">Core</span></span>
         </div>
 
+        <!-- CONTATORE LIVE -->
         <div class="flex items-center gap-2 px-3 py-1.5 bg-zinc-50 border border-zinc-100 rounded-full">
             <div class="w-2 h-2 bg-emerald-500 rounded-full pulse-live"></div>
             <span class="text-[9px] font-black uppercase tracking-widest text-zinc-500">
                 <span id="visitor-count" class="text-zinc-900">142</span> Online
             </span>
+        </div>
+
+        <div class="flex gap-4 md:gap-8 text-[9px] font-black uppercase tracking-widest text-zinc-400">
+            <a href="#missione" class="hover:text-emerald-600 transition-colors">Missione</a>
+            <a href="#protocollo" class="hover:text-emerald-600 transition-colors">Protocollo</a>
         </div>
     </nav>
 
@@ -60,7 +66,7 @@
                 </h1>
                 
                 <p class="text-lg md:text-xl text-zinc-500 max-w-xl leading-relaxed mb-10 font-medium mx-auto lg:mx-0">
-                    Smetti di affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo e vogliamo condividerlo con te.
+                    Siamo stanchi di vedere persone affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo.
                 </p>
 
                 <div id="contatti" class="bg-white p-2 rounded-xl border border-zinc-200 shadow-2xl max-w-lg mx-auto lg:mx-0 glow-emerald">
@@ -103,6 +109,80 @@
         </div>
     </section>
 
+    <!-- SEZIONE MISSIONE (VERDE) -->
+    <section id="missione" class="py-32 bg-emerald-600 text-white px-6 md:px-12 rounded-[3rem] mx-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12 italic">Basta Caos. <br>Inizia a <span class="text-zinc-900 text-not-italic">Vivere.</span></h2>
+            <p class="text-emerald-50 text-xl md:text-2xl leading-relaxed font-medium mb-16">
+                Siamo ragazzi che hanno testato centinaia di tool sulla propria pelle. Abbiamo sbagliato, abbiamo perso tempo e abbiamo finalmente trovato la strada.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <h4 class="font-black uppercase mb-2">Verità</h4>
+                    <p class="text-xs text-emerald-100">Consigliamo solo quello che usiamo noi ogni giorno.</p>
+                </div>
+                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <h4 class="font-black uppercase mb-2">Libertà</h4>
+                    <p class="text-xs text-emerald-100">L'obiettivo finale è farti lavorare meno, non di più.</p>
+                </div>
+                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <h4 class="font-black uppercase mb-2">Insieme</h4>
+                    <p class="text-xs text-emerald-100">Non sei solo. Siamo una community che cresce insieme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE PROTOCOLLO -->
+    <section id="protocollo" class="py-32 px-6 md:px-12 max-w-7xl mx-auto text-center">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Il <span class="text-emerald-600">Protocollo</span></h2>
+            <p class="text-zinc-500 max-w-xl mx-auto font-medium">Tre passi semplici per riprenderti la tua vita digitale.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
+                    <i data-lucide="trash-2" class="text-emerald-600"></i>
+                </div>
+                <h4 class="text-xl font-black uppercase mb-4">01. Pulizia</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">Eliminiamo tutto quello che ti distrae e ti fa perdere tempo inutile.</p>
+            </div>
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
+                    <i data-lucide="link" class="text-emerald-600"></i>
+                </div>
+                <h4 class="text-xl font-black uppercase mb-4">02. Connessione</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">Colleghiamo i tuoi tool preferiti così non devi più copiare nulla.</p>
+            </div>
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
+                    <i data-lucide="coffee" class="text-emerald-600"></i>
+                </div>
+                <h4 class="text-xl font-black uppercase mb-4">03. Relax</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">Il sistema lavora, tu ti godi il tempo libero o ti concentri su quello che ami.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE ARMATURA (RISORSE) -->
+    <section id="risorse" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-100">
+        <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 text-center">L' <span class="text-emerald-600">Armatura</span></h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
+                <i data-lucide="database" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
+                <h4 class="text-xl font-black uppercase mb-2">Notion</h4>
+                <p class="text-zinc-500 text-sm mb-6">Il cervello della tua azienda. Tutto in un unico posto.</p>
+                <a href="https://notion.so" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
+            </div>
+            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
+                <i data-lucide="workflow" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
+                <h4 class="text-xl font-black uppercase mb-2">Make.com</h4>
+                <p class="text-zinc-500 text-sm mb-6">Il sistema nervoso. Collega le app e automatizza tutto.</p>
+                <a href="https://make.com" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
+            </div>
+        </div>
+    </section>
+
     <!-- MODAL GRATTA E VINCI + SUSPENSE VIEW -->
     <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/95 backdrop-blur-md p-6">
         <div id="scratch-card-view" class="bg-white p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
@@ -138,7 +218,7 @@
                 </ul>
             </div>
 
-            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest pulse">In attesa di apertura email...</p>
+            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest animate-pulse">In attesa di apertura email...</p>
             <button onclick="closeModal()" class="mt-8 text-[10px] font-black uppercase tracking-widest text-zinc-300 hover:text-zinc-900 transition-colors">Chiudi questa finestra</button>
         </div>
     </div>
