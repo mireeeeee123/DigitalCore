@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalCore | Protocollo & Consigli d'Oro</title>
+    <title>DigitalCore | Protocollo Operativo 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -12,42 +12,12 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .bg-dots { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px; }
-        .glow-emerald { box-shadow: 0 0 40px rgba(16, 185, 129, 0.2); }
+        .glow-emerald { box-shadow: 0 0 50px rgba(16, 185, 129, 0.3); }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
         
-        /* Scratch Card Styles */
-        #scratch-container {
-            position: relative;
-            width: 280px;
-            height: 140px;
-            margin: 0 auto;
-            user-select: none;
-        }
-        #scratch-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 20;
-            border-radius: 12px;
-            cursor: crosshair;
-        }
-        .prize-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #f0fdf4;
-            border: 2px dashed #10b981;
-            border-radius: 12px;
-            z-index: 10;
-            padding: 15px;
-            text-align: center;
-        }
+        #scratch-container { position: relative; width: 280px; height: 140px; margin: 0 auto; user-select: none; }
+        #scratch-canvas { position: absolute; top: 0; left: 0; z-index: 20; border-radius: 12px; cursor: crosshair; }
+        .prize-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f0fdf4; border: 2px dashed #10b981; border-radius: 12px; z-index: 10; padding: 15px; text-align: center; }
 
         @keyframes pulse-green {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
@@ -59,7 +29,6 @@
 </head>
 <body class="bg-[#fcfcfc] text-zinc-900 antialiased bg-dots">
 
-    <!-- Iframe nascosto per invio form -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted !== 'undefined' && submitted) { showScratchCard(); }"></iframe>
 
     <!-- NAVBAR -->
@@ -71,7 +40,6 @@
             <span class="font-black uppercase tracking-tighter text-lg hidden sm:block">Digital<span class="text-emerald-600">Core</span></span>
         </div>
 
-        <!-- CONTATORE LIVE -->
         <div class="flex items-center gap-2 px-3 py-1.5 bg-zinc-50 border border-zinc-100 rounded-full">
             <div class="w-2 h-2 bg-emerald-500 rounded-full pulse-live"></div>
             <span class="text-[9px] font-black uppercase tracking-widest text-zinc-500">
@@ -80,8 +48,8 @@
         </div>
 
         <div class="flex gap-4 md:gap-8 text-[9px] font-black uppercase tracking-widest text-zinc-400">
-            <a href="#protocollo" class="hover:text-emerald-600 transition-colors">Protocollo</a>
-            <a href="#risorse" class="hover:text-emerald-600 transition-colors hidden md:block">Risorse</a>
+            <a href="#perche" class="hover:text-emerald-600 transition-colors">Il Problema</a>
+            <a href="#protocollo" class="hover:text-emerald-600 transition-colors">Il Metodo</a>
         </div>
     </nav>
 
@@ -90,17 +58,16 @@
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div class="lg:col-span-7">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-md mb-6 mx-auto lg:mx-0">
-                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700">Creato dai ragazzi per la community</span>
+                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700 italic">Creato da ragazzi per la community</span>
                 </div>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-zinc-900 uppercase tracking-tighter leading-[0.85] mb-8">
                     Semplifica. <br><span class="text-emerald-600">Automatizza.</span> <br>Respira.
                 </h1>
                 
                 <p class="text-lg md:text-xl text-zinc-500 max-w-xl leading-relaxed mb-10 font-medium mx-auto lg:mx-0">
-                    Siamo stanchi di vedere persone affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo.
+                    Smetti di affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo e vogliamo condividerlo con te.
                 </p>
 
-                <!-- FORM LEAD -->
                 <div id="contatti" class="bg-white p-2 rounded-xl border border-zinc-200 shadow-2xl max-w-lg mx-auto lg:mx-0 glow-emerald">
                     <script type="text/javascript">var submitted=false;</script>
                     <form action="https://7ebfd446.sibforms.com/serve/MUIFAHUWAWG73VRB7G83nrqV19fwedp9eQEhIZQ_sa0czgXYdQsFO2JC_24N4ptv5j4D3wlxQvpc--Z1p2fu0WKjHiI1Carqfjk6rJIvHQYtoYQqFBBk0mXr2cEgM2MFDuD5OJjddm2kJhWNKt0kVEGDen-2wh4djlG0o_5jzJ4cb_q5DIAlArytjRagUIZcXaK-HROmgXnNcQly0Q==" 
@@ -114,10 +81,9 @@
                         </button>
                     </form>
                 </div>
-                <p class="mt-4 text-[9px] font-bold uppercase tracking-widest text-zinc-400">🔥 Unisciti a +1.420 professionisti liberi</p>
+                <p class="mt-4 text-[9px] font-bold uppercase tracking-widest text-zinc-400 italic">🔥 Già scaricato da +1.420 professionisti questo mese</p>
             </div>
 
-            <!-- BOX ASPETTATIVA -->
             <div class="lg:col-span-5">
                 <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 shadow-2xl text-left relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10"><i data-lucide="shield" size="100" class="text-emerald-500"></i></div>
@@ -125,11 +91,11 @@
                         <h3 class="text-emerald-400 font-mono text-[10px] mb-6 uppercase tracking-widest">> System_Init...</h3>
                         <div class="space-y-4">
                             <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center">
-                                <span class="text-white font-bold text-xs">01. Audit dello Stack</span>
+                                <span class="text-white font-bold text-xs italic">01. Audit dello Stack</span>
                                 <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
                             </div>
                             <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center">
-                                <span class="text-white font-bold text-xs">02. Automazione Flussi</span>
+                                <span class="text-white font-bold text-xs italic">02. Automazione Flussi</span>
                                 <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
                             </div>
                             <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg flex justify-between items-center">
@@ -143,60 +109,96 @@
         </div>
     </section>
 
-    <!-- MODAL GRATTA E VINCI -->
-    <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/95 backdrop-blur-md p-6">
-        <div class="bg-white p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
-            <h3 class="text-2xl font-black uppercase mb-2">Consiglio del Giorno 🌟</h3>
-            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8">Grata qui sotto per leggere il consiglio</p>
-            
-            <div id="scratch-container">
-                <div class="prize-content">
-                    <span class="text-[9px] font-black uppercase text-emerald-600 mb-2">Il segreto di oggi:</span>
-                    <span id="daily-advice" class="text-sm font-bold text-zinc-900 leading-tight">Caricamento...</span>
+    <!-- NUOVO BLOCCO: IL PROBLEMA (Agitazione) -->
+    <section id="perche" class="py-24 bg-zinc-900 text-white px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">Perché sei <br><span class="text-emerald-500 italic">bloccato?</span></h2>
+                <p class="text-zinc-400 text-lg mb-8 font-medium">L'80% dei professionisti digitali spreca il 40% del proprio tempo in task che un computer potrebbe fare in 2 secondi. Il problema non è che non lavori abbastanza, è che il tuo sistema è un colabrodo.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm font-bold uppercase tracking-widest"><i data-lucide="x-circle" class="text-rose-500 w-5 h-5"></i> Troppi abbonamenti inutili</div>
+                    <div class="flex items-center gap-3 text-sm font-bold uppercase tracking-widest"><i data-lucide="x-circle" class="text-rose-500 w-5 h-5"></i> Copia-incolla infinito tra i tool</div>
+                    <div class="flex items-center gap-3 text-sm font-bold uppercase tracking-widest"><i data-lucide="x-circle" class="text-rose-500 w-5 h-5"></i> Zero tempo per la strategia</div>
                 </div>
-                <canvas id="scratch-canvas" width="280" height="140"></canvas>
             </div>
-
-            <button onclick="closeModal()" class="mt-8 px-6 py-3 bg-zinc-100 text-zinc-400 text-[9px] font-black uppercase tracking-widest rounded-full hover:text-zinc-900 transition-colors">Chiudi e continua</button>
-        </div>
-    </div>
-
-    <!-- SEZIONE RISORSE -->
-    <section id="risorse" class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-100">
-        <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 text-center">L' <span class="text-emerald-600">Armatura</span></h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
-                <i data-lucide="database" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
-                <h4 class="text-xl font-black uppercase mb-2">Notion</h4>
-                <p class="text-zinc-500 text-sm mb-6">Il cervello della tua azienda. Tutto in un unico posto.</p>
-                <a href="https://notion.so" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
-            </div>
-            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
-                <i data-lucide="workflow" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
-                <h4 class="text-xl font-black uppercase mb-2">Make.com</h4>
-                <p class="text-zinc-500 text-sm mb-6">Il sistema nervoso. Collega le app e automatizza tutto.</p>
-                <a href="https://make.com" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
+            <div class="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-sm">
+                <h3 class="text-2xl font-black uppercase mb-6">La nostra Missione</h3>
+                <p class="text-zinc-400 italic leading-relaxed">"Siamo ragazzi che hanno testato tutto sulla propria pelle. Non siamo un'azienda fredda, siamo una community che vuole riprendersi la libertà. Il DigitalCore Protocol è la nostra arma."</p>
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center font-black text-zinc-900">DC</div>
+                    <span class="text-[10px] font-black uppercase tracking-widest">DigitalCore Team</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- NUOVO BLOCCO: COSA RICEVI (Anteprima Valore) -->
+    <section id="protocollo" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Cosa c'è nel <span class="text-emerald-600">Protocollo</span></h2>
+            <p class="text-zinc-500 max-w-xl mx-auto font-medium italic">Un PDF operativo di 12 pagine che distrugge il caos.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <span class="text-4xl font-black text-emerald-100 mb-4 block italic">01</span>
+                <h4 class="text-xl font-black uppercase mb-4">The Purge (L'Audit)</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">Come individuare i software che ti rubano soldi. Se non ha API, è un debito tecnico.</p>
+            </div>
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <span class="text-4xl font-black text-emerald-100 mb-4 block italic">02</span>
+                <h4 class="text-xl font-black uppercase mb-4">The Brain (Notion)</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">Ti diamo lo schema esatto per strutturare il tuo cervello aziendale. Basta file sparsi.</p>
+            </div>
+            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
+                <span class="text-4xl font-black text-emerald-100 mb-4 block italic">03</span>
+                <h4 class="text-xl font-black uppercase mb-4">The Engine (Make)</h4>
+                <p class="text-zinc-500 text-sm leading-relaxed">3 automazioni pronte all'uso per risparmiare le tue prime 10 ore al mese. Subito.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL GRATTA E VINCI + SUCCESS -->
+    <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/95 backdrop-blur-md p-6">
+        <div id="scratch-card-view" class="bg-white p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
+            <h3 class="text-2xl font-black uppercase mb-2">Consiglio del Giorno 🌟</h3>
+            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8 italic">Grata qui sotto per sbloccare il download</p>
+            
+            <div id="scratch-container">
+                <div class="prize-content">
+                    <span class="text-[9px] font-black uppercase text-emerald-600 mb-2">Il segreto di oggi:</span>
+                    <span id="daily-advice" class="text-sm font-bold text-zinc-900 leading-tight italic">Caricamento...</span>
+                </div>
+                <canvas id="scratch-canvas" width="280" height="140"></canvas>
+            </div>
+        </div>
+
+        <!-- SUCCESS VIEW (Appare dopo aver grattato) -->
+        <div id="success-view" class="hidden bg-white p-10 rounded-3xl max-w-md w-full text-center shadow-2xl">
+            <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check-circle-2" class="text-emerald-600 w-10 h-10"></i>
+            </div>
+            <h3 class="text-3xl font-black uppercase mb-4 italic">Sei dentro!</h3>
+            <p class="text-zinc-500 text-sm mb-8 font-medium">Il Protocollo è stato inviato alla tua email, ma puoi scaricarlo anche qui sotto ora.</p>
+            <a href="#" class="block w-full py-5 bg-emerald-600 text-white font-black uppercase tracking-widest rounded-xl hover:bg-zinc-900 transition-all shadow-lg shadow-emerald-100">Scarica il PDF Ora</a>
+            <button onclick="closeModal()" class="mt-6 text-[9px] font-black uppercase tracking-widest text-zinc-400 hover:text-zinc-900">Chiudi</button>
+        </div>
+    </div>
+
     <footer class="py-20 text-center border-t border-zinc-100">
-        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400">DigitalCore Protocol © 2026</p>
+        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 italic">DigitalCore Protocol © 2026</p>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        // CONSIGLI DEL GIORNO
         const ADVICES = [
             "Elimina i software che non hanno API. Se non comunicano, sono un debito tecnico.",
             "Automatizza prima i flussi di cassa. Il tempo risparmiato lì vale il doppio.",
-            "Centralizza tutto in un unico database. I fogli Excel sparsi sono il cancro della scalabilità.",
+            "Centralizza tutto in un unico database. I fogli Excel sparsi sono il cancro.",
             "L'AI non sostituisce il lavoro, sostituisce chi non la usa. Inizia oggi.",
-            "Se un task richiede più di 10 minuti e lo fai ogni giorno, deve essere automatizzato."
+            "Se un task richiede più di 10 minuti e lo fai ogni giorno, automatizzalo."
         ];
 
-        // CONTATORE LIVE
         let count = 142;
         setInterval(() => {
             count += Math.floor(Math.random() * 5) - 2;
@@ -204,9 +206,10 @@
             document.getElementById('visitor-count').innerText = count;
         }, 3000);
 
-        // GRATTA E VINCI
         function showScratchCard() {
             document.getElementById('scratch-modal').classList.remove('hidden');
+            document.getElementById('scratch-card-view').classList.remove('hidden');
+            document.getElementById('success-view').classList.add('hidden');
             document.getElementById('daily-advice').innerText = ADVICES[Math.floor(Math.random() * ADVICES.length)];
             initScratch();
         }
@@ -225,7 +228,7 @@
             ctx.font = 'bold 12px Inter';
             ctx.fillStyle = '#9ca3af';
             ctx.textAlign = 'center';
-            ctx.fillText('GRATTA PER IL CONSIGLIO', canvas.width/2, canvas.height/2 + 5);
+            ctx.fillText('GRATTA PER SBLOCCARE', canvas.width/2, canvas.height/2 + 5);
 
             function scratch(e) {
                 if (!isDrawing) return;
@@ -247,7 +250,14 @@
                 }
                 if (count > (imageData.data.length / 4) * 0.5) {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#10b981', '#ffffff'] });
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#10b981', '#ffffff'] });
+                    
+                    // MOSTRA IL SUCCESSO DOPO 1 SECONDO
+                    setTimeout(() => {
+                        document.getElementById('scratch-card-view').classList.add('hidden');
+                        document.getElementById('success-view').classList.remove('hidden');
+                        lucide.createIcons(); // Ricarica icone nel nuovo div
+                    }, 800);
                 }
             }
 
