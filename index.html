@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>DigitalCore | Protocollo Operativo 2026</title>
-    
-    <!-- Preload Font critici -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#020617',
+              accent: '#10b981'
+            }
+          }
+        }
+      }
+    </script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
-
     <style>
-        :root { --bg: #ffffff; --ink: #020617; --accent: #10b981; --f-sans: 'Plus Jakarta Sans', sans-serif; }
-        body { font-family: var(--f-sans); background-color: var(--bg); color: var(--ink); margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #ffffff; color: #020617; margin: 0; padding: 0; }
         .bg-dots { background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px); background-size: 32px 32px; }
-        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #f1f5f9; }
+        .glass { background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #f1f5f9; }
         .gradient-text { background: linear-gradient(to right, #020617, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* Scratch Card Responsive */
         #scratch-container { position: relative; width: 100%; max-width: 320px; aspect-ratio: 2/1; margin: 0 auto; user-select: none; touch-action: none; }
         #scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; border-radius: 20px; cursor: crosshair; }
-        .prize-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f0fdf4; border: 2px dashed var(--accent); border-radius: 20px; z-index: 10; padding: 15px; text-align: center; }
-        
-        @keyframes pulse-emerald {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-        }
+        .prize-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f0fdf4; border: 2px dashed #10b981; border-radius: 20px; z-index: 10; padding: 15px; text-align: center; }
+        @keyframes pulse-emerald { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.05);opacity:0.8} }
         .pulse-live { animation: pulse-emerald 2s infinite; }
         .bento-card { transition: transform 0.3s ease, border-color 0.3s ease; border: 1px solid #f1f5f9; }
-        .bento-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        
-        /* Fix per evitare scroll orizzontale */
+        .bento-card:hover { transform: translateY(-5px); border-color: #10b981; }
         html, body { overflow-x: hidden; width: 100%; position: relative; }
     </style>
 </head>
@@ -42,36 +41,34 @@
 
     <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full z-50 glass h-20 flex items-center justify-between px-6 md:px-16">
-        <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-            <div class="w-10 h-10 bg-ink rounded-xl flex items-center justify-center shadow-lg">
-                <i data-lucide="zap" class="w-6 h-6 text-accent"></i>
+        <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg" style="background:#020617">
+                <i data-lucide="zap" class="w-6 h-6 text-emerald-500"></i>
             </div>
-            <span class="font-extrabold uppercase tracking-tighter text-xl text-ink">Digital<span class="text-accent">Core</span></span>
+            <span class="font-extrabold uppercase tracking-tighter text-xl" style="color:#020617">Digital<span class="text-emerald-500">Core</span></span>
         </div>
-        
         <div class="hidden lg:flex items-center gap-8">
-            <a href="#missione" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-accent transition-colors">Missione</a>
-            <a href="#risorse" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-accent transition-colors">Strumenti</a>
-            <a href="#protocollo" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-accent transition-colors">Protocollo</a>
+            <a href="#missione" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-emerald-500 transition-colors">Missione</a>
+            <a href="#risorse" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-emerald-500 transition-colors">Strumenti</a>
+            <a href="#protocollo" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-emerald-500 transition-colors">Protocollo</a>
         </div>
-
         <div class="flex items-center gap-4">
             <div class="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-100 rounded-full">
-                <div class="w-2 h-2 bg-accent rounded-full pulse-live"></div>
+                <div class="w-2 h-2 bg-emerald-500 rounded-full pulse-live"></div>
                 <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500"><span id="visitor-count">1,242</span> Online</span>
             </div>
-            <button id="mobile-menu-toggle" class="lg:hidden p-2 text-ink">
+            <button id="mobile-menu-toggle" class="lg:hidden p-2" style="color:#020617">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
     </nav>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-ink/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8">
-        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
-        <a href="#missione" class="text-2xl font-black uppercase tracking-widest text-white mobile-link">Missione</a>
-        <a href="#risorse" class="text-2xl font-black uppercase tracking-widest text-white mobile-link">Strumenti</a>
-        <a href="#protocollo" class="text-2xl font-black uppercase tracking-widest text-white mobile-link">Protocollo</a>
+    <div id="mobile-menu" style="display:none; position:fixed; inset:0; z-index:60; background:rgba(2,6,23,0.97); backdrop-filter:blur(20px); flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
+        <button id="mobile-menu-close" style="position:absolute; top:1.5rem; right:1.5rem; color:white; background:none; border:none; cursor:pointer;"><i data-lucide="x" class="w-8 h-8"></i></button>
+        <a href="#missione" class="text-2xl font-black uppercase tracking-widest text-white mobile-link" style="text-decoration:none;">Missione</a>
+        <a href="#risorse" class="text-2xl font-black uppercase tracking-widest text-white mobile-link" style="text-decoration:none;">Strumenti</a>
+        <a href="#protocollo" class="text-2xl font-black uppercase tracking-widest text-white mobile-link" style="text-decoration:none;">Protocollo</a>
     </div>
 
     <!-- HERO -->
@@ -81,42 +78,38 @@
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
                     <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-700">Unisciti alla nostra Community</span>
                 </div>
-                <h1 class="text-5xl md:text-8xl font-black text-ink uppercase tracking-tighter leading-[0.85] mb-8">
+                <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-8" style="color:#020617">
                     Semplifica. <br><span class="gradient-text">Automatizza.</span> <br>Respira.
                 </h1>
                 <p class="text-lg md:text-xl text-slate-500 max-w-xl mb-10 font-medium italic">
                     Abbiamo creato questo protocollo per aiutare chiunque a riprendersi il proprio tempo e la propria serenità.
                 </p>
-
-                <!-- LEAD FORM -->
-                <div id="lead-section" class="w-full max-w-2xl bg-white p-4 rounded-[2rem] border-[4px] border-emerald-500 shadow-2xl transition-transform hover:scale-[1.01]">
+                <div class="w-full max-w-2xl bg-white p-4 rounded-[2rem] border-[4px] border-emerald-500 shadow-2xl transition-transform hover:scale-[1.01]">
                     <form id="lead-form" class="flex flex-col sm:flex-row gap-3">
-                        <input type="email" id="lead-email" required placeholder="LA TUA EMAIL QUI..." 
-                               class="flex-1 h-16 px-6 bg-emerald-50 rounded-xl focus:outline-none text-lg font-black text-ink placeholder:text-emerald-800/30 border-2 border-transparent focus:border-emerald-200 transition-all uppercase" />
-                        <button type="submit" class="h-16 px-8 bg-emerald-500 text-ink text-xs font-black uppercase tracking-widest hover:bg-ink hover:text-white transition-all rounded-xl flex items-center justify-center gap-2">
+                        <input type="email" id="lead-email" required placeholder="LA TUA EMAIL QUI..."
+                               class="flex-1 h-16 px-6 bg-emerald-50 rounded-xl focus:outline-none text-lg font-black placeholder:text-emerald-800/30 border-2 border-transparent focus:border-emerald-200 transition-all uppercase" style="color:#020617"/>
+                        <button type="submit" id="submit-btn" class="h-16 px-8 bg-emerald-500 text-xs font-black uppercase tracking-widest hover:bg-emerald-600 transition-all rounded-xl flex items-center justify-center gap-2" style="color:#020617">
                             INIZIA ORA <i data-lucide="zap" class="w-5 h-5"></i>
                         </button>
                     </form>
                 </div>
             </div>
-            
-            <!-- ANALISI BLOCK -->
             <div class="lg:col-span-5">
-                <div class="bg-ink rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden">
+                <div class="rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden" style="background:#020617; border:1px solid rgba(255,255,255,0.1)">
                     <div class="relative z-10 space-y-8">
                         <h3 class="text-emerald-400 font-bold text-[10px] uppercase tracking-[0.3em] italic">Analisi della tua Attività</h3>
                         <div class="space-y-6">
                             <div class="flex items-center gap-5">
-                                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-emerald-500"><i data-lucide="search"></i></div>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-emerald-500" style="background:rgba(255,255,255,0.05)"><i data-lucide="search"></i></div>
                                 <div><h4 class="text-white font-bold italic">1. Audit Abitudini</h4><p class="text-slate-500 text-xs">Troviamo cosa ti ruba energia.</p></div>
                             </div>
                             <div class="flex items-center gap-5">
-                                <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-emerald-500"><i data-lucide="refresh-cw"></i></div>
-                                <div><h4 class="text-white font-bold italic">2. Automazione</h4><p class="text-slate-500 text-xs">Colleghiamo tutto per farti respirate.</p></div>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-emerald-500" style="background:rgba(255,255,255,0.05)"><i data-lucide="refresh-cw"></i></div>
+                                <div><h4 class="text-white font-bold italic">2. Automazione</h4><p class="text-slate-500 text-xs">Colleghiamo tutto per farti respirare.</p></div>
                             </div>
                             <div class="flex items-center gap-5">
-                                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-500"><i data-lucide="trending-up"></i></div>
-                                <div><h4 class="text-emerald-500 font-bold italic">3. Crescita</h4><p class="text-slate-400 text-xs">Il sistema lavora, tu vivi.</p></div>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center text-emerald-500" style="background:rgba(16,185,129,0.2)"><i data-lucide="trending-up"></i></div>
+                                <div><h4 class="font-bold italic" style="color:#10b981">3. Crescita</h4><p class="text-slate-400 text-xs">Il sistema lavora, tu vivi.</p></div>
                             </div>
                         </div>
                     </div>
@@ -128,7 +121,7 @@
     <!-- MISSIONE -->
     <section id="missione" class="py-20 bg-slate-50 border-y border-slate-100 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-12 italic">Perché <span class="text-emerald-600">DigitalCore</span>?</h2>
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-12 italic" style="color:#020617">Perché <span class="text-emerald-600">DigitalCore</span>?</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                     <i data-lucide="heart" class="w-8 h-8 text-red-500 mx-auto mb-4"></i>
@@ -152,30 +145,31 @@
     <!-- STRUMENTI -->
     <section id="risorse" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-6xl font-black uppercase tracking-tighter italic">Il Tuo <span class="text-emerald-600">Kit</span></h2>
+            <h2 class="text-3xl md:text-6xl font-black uppercase tracking-tighter italic" style="color:#020617">Il Tuo <span class="text-emerald-600">Kit</span></h2>
         </div>
         <div class="grid md:grid-cols-12 gap-6">
             <div class="md:col-span-8 bento-card bg-white p-10 rounded-[2.5rem]">
                 <h4 class="text-2xl font-black uppercase mb-4 italic">Notion: Il Cervello</h4>
                 <p class="text-slate-500 italic mb-6">Centralizza tutto: progetti, dati e idee in un unico posto sicuro.</p>
-                <a href="https://www.notion.so" target="_blank" class="text-xs font-black uppercase border-b-2 border-emerald-500 pb-1">Configura ora →</a>
+                <a href="https://www.notion.so" target="_blank" class="text-xs font-black uppercase border-b-2 border-emerald-500 pb-1 text-emerald-600">Configura ora →</a>
             </div>
             <div class="md:col-span-4 bento-card bg-white p-10 rounded-[2.5rem]">
                 <h4 class="text-2xl font-black uppercase mb-4 italic">Make: I Flussi</h4>
                 <p class="text-slate-500 italic mb-6">Collega le tue app e lascia che lavorino per te 24/7.</p>
-                <a href="https://www.make.com" target="_blank" class="text-xs font-black uppercase border-b-2 border-emerald-500 pb-1">Attiva →</a>
+                <a href="https://www.make.com" target="_blank" class="text-xs font-black uppercase border-b-2 border-emerald-500 pb-1 text-emerald-600">Attiva →</a>
             </div>
-            <div class="md:col-span-12 bento-card bg-ink p-10 md:p-16 rounded-[3rem] text-white">
+            <div class="md:col-span-12 bento-card p-10 md:p-16 rounded-[3rem] text-white" style="background:#020617">
                 <h4 class="text-4xl font-black uppercase mb-6 italic text-emerald-500">HighLevel: Il Comando</h4>
                 <p class="text-slate-400 text-lg mb-8 italic">Gestisci contatti e comunicazioni senza sforzo in un'unica piattaforma.</p>
-                <a href="https://www.gohighlevel.com/?fp_ref=vincenzo77" target="_blank" class="inline-flex px-8 py-4 bg-emerald-500 text-ink font-black uppercase rounded-xl">Inizia il Percorso</a>
+                <a href="https://www.gohighlevel.com/?fp_ref=vincenzo77" target="_blank" class="inline-flex px-8 py-4 bg-emerald-500 font-black uppercase rounded-xl" style="color:#020617">Inizia il Percorso</a>
             </div>
         </div>
     </section>
 
     <!-- MODALE SCRATCH -->
-    <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 backdrop-blur-xl p-6">
-        <div id="scratch-card-view" class="bg-white p-10 rounded-[2.5rem] max-w-md w-full text-center">
+    <div id="scratch-modal" style="display:none; position:fixed; inset:0; z-index:100; align-items:center; justify-content:center; padding:1.5rem;">
+        <div style="position:absolute; inset:0; background:rgba(2,6,23,0.97); backdrop-filter:blur(20px);" onclick="closeModal()"></div>
+        <div id="scratch-card-view" class="bg-white p-10 rounded-[2.5rem] max-w-md w-full text-center" style="position:relative; z-index:10;">
             <h3 class="text-2xl font-black uppercase mb-8 italic">Un Regalo per Te</h3>
             <div id="scratch-container">
                 <div class="prize-content">
@@ -186,26 +180,24 @@
             </div>
             <p class="mt-8 text-[10px] text-slate-400 italic">Grattando accetti i termini della community.</p>
         </div>
-
-        <div id="success-view" class="hidden bg-white p-10 rounded-[2.5rem] max-w-md w-full text-center border-4 border-emerald-500">
+        <div id="success-view" class="bg-white p-10 rounded-[2.5rem] max-w-md w-full text-center border-4 border-emerald-500" style="display:none; position:relative; z-index:10;">
             <h3 class="text-3xl font-black uppercase mb-4 italic">Accesso <span class="text-emerald-600">Garantito.</span></h3>
             <p class="text-slate-500 text-sm mb-8 italic">Scarica ora il tuo protocollo tecnico personalizzato.</p>
-            <button onclick="generateProtocolPDF()" class="w-full py-5 bg-ink text-white font-black uppercase rounded-xl mb-4">Scarica Protocollo</button>
-            <button onclick="location.reload()" class="text-[10px] font-bold uppercase text-slate-300">Chiudi</button>
+            <button onclick="generateProtocolPDF()" class="w-full py-5 font-black uppercase rounded-xl mb-4 text-white" style="background:#020617">Scarica Protocollo</button>
+            <button onclick="closeModal()" class="text-[10px] font-bold uppercase text-slate-300 bg-transparent border-0 cursor-pointer">Chiudi</button>
         </div>
     </div>
 
-    <footer class="py-20 text-center bg-slate-50 border-t border-slate-100">
-        <span class="font-black uppercase tracking-tighter text-lg">Digital<span class="text-emerald-500">Core</span></span>
+    <footer id="protocollo" class="py-20 text-center bg-slate-50 border-t border-slate-100">
+        <span class="font-black uppercase tracking-tighter text-lg" style="color:#020617">Digital<span class="text-emerald-500">Core</span></span>
         <p class="text-[9px] text-slate-400 mt-4 italic uppercase tracking-widest">© 2026 Protocollo Operativo Riservato</p>
     </footer>
 
     <script>
-        // Ottimizzazione Caricamento
         window.addEventListener('load', () => {
             if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
             window.scrollTo(0, 0);
-            if(typeof lucide !== 'undefined') lucide.createIcons();
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         });
 
         // Visitor Count
@@ -213,39 +205,55 @@
         setInterval(() => {
             count += Math.floor(Math.random() * 3) - 1;
             const el = document.getElementById('visitor-count');
-            if(el) el.innerText = count.toLocaleString();
+            if (el) el.innerText = count.toLocaleString('it-IT');
         }, 4000);
 
         // Mobile Menu
-        const menu = document.getElementById('mobile-menu');
-        document.getElementById('mobile-menu-toggle').onclick = () => menu.classList.remove('hidden');
-        document.getElementById('mobile-menu-close').onclick = () => menu.classList.add('hidden');
-        document.querySelectorAll('.mobile-link').forEach(l => l.onclick = () => menu.classList.add('hidden'));
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-toggle').onclick = () => { mobileMenu.style.display = 'flex'; };
+        document.getElementById('mobile-menu-close').onclick = () => { mobileMenu.style.display = 'none'; };
+        document.querySelectorAll('.mobile-link').forEach(l => l.onclick = () => { mobileMenu.style.display = 'none'; });
 
-        // Form Logic
-        const ADVICES = ["Semplifica prima di automatizzare.", "Il tempo è la tua risorsa più scarsa.", "Se lo fai 2 volte, automatizzalo.", "Respira. Il sistema lavora per te."];
-        
+        // Form — solo frontend, zero chiamate API
+        const ADVICES = [
+            "Semplifica prima di automatizzare.",
+            "Il tempo è la tua risorsa più scarsa.",
+            "Se lo fai 2 volte, automatizzalo.",
+            "Respira. Il sistema lavora per te."
+        ];
+
         document.getElementById('lead-form').onsubmit = async (e) => {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
+            const btn = document.getElementById('submit-btn');
+            const email = document.getElementById('lead-email').value;
+            btn.textContent = '⏳ Invio...';
             btn.disabled = true;
-            btn.innerHTML = "...";
 
             try {
-                // Tentativo API, ma proseguiamo comunque per non bloccare l'utente
-                await fetch('/api/leads', {
+                await fetch('https://formspree.io/f/xjgejyzd', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: document.getElementById('lead-email').value })
-                }).catch(() => console.log("API Offline - Proseguo in locale"));
-                
-                document.getElementById('scratch-modal').classList.remove('hidden');
-                document.getElementById('daily-advice').innerText = ADVICES[Math.floor(Math.random() * ADVICES.length)];
-                initScratch();
-            } catch (err) {
-                console.error(err);
-            }
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+            } catch (_) {}
+
+            btn.textContent = '✓ Fatto!';
+            const modal = document.getElementById('scratch-modal');
+            modal.style.display = 'flex';
+            document.getElementById('daily-advice').innerText = ADVICES[Math.floor(Math.random() * ADVICES.length)];
+            setTimeout(initScratch, 150);
         };
+
+        function closeModal() {
+            const modal = document.getElementById('scratch-modal');
+            modal.style.display = 'none';
+            document.getElementById('scratch-card-view').style.display = 'block';
+            document.getElementById('success-view').style.display = 'none';
+            const btn = document.getElementById('submit-btn');
+            btn.innerHTML = 'INIZIA ORA';
+            btn.disabled = false;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
 
         function initScratch() {
             const container = document.getElementById('scratch-container');
@@ -259,39 +267,57 @@
             ctx.font = 'bold 14px sans-serif';
             ctx.fillStyle = '#64748b';
             ctx.textAlign = 'center';
-            ctx.fillText('GRATTA QUI', canvas.width/2, canvas.height/2 + 5);
+            ctx.fillText('✦  GRATTA QUI  ✦', canvas.width / 2, canvas.height / 2 + 5);
 
             let isDrawing = false;
-            const scratch = (e) => {
-                if (!isDrawing) return;
+            let revealed = false;
+            let scratchCount = 0;
+
+            const getPos = (e) => {
                 const rect = canvas.getBoundingClientRect();
-                const x = (e.clientX || e.touches[0].clientX) - rect.left;
-                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+                const src = e.touches ? e.touches[0] : e;
+                return { x: (src.clientX - rect.left) * scaleX, y: (src.clientY - rect.top) * scaleY };
+            };
+
+            const doScratch = (e) => {
+                if (!isDrawing || revealed) return;
+                if (e.cancelable) e.preventDefault();
+                const { x, y } = getPos(e);
                 ctx.globalCompositeOperation = 'destination-out';
-                ctx.beginPath(); ctx.arc(x, y, 30, 0, Math.PI * 2); ctx.fill();
-                
-                // Check completamento
-                const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-                let count = 0;
-                for (let i = 3; i < data.length; i += 4) if (data[i] === 0) count++;
-                if (count > data.length / 8) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    if(typeof confetti !== 'undefined') confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-                    setTimeout(() => {
-                        document.getElementById('scratch-card-view').classList.add('hidden');
-                        document.getElementById('success-view').classList.remove('hidden');
-                    }, 500);
+                ctx.beginPath();
+                ctx.arc(x, y, 28, 0, Math.PI * 2);
+                ctx.fill();
+                scratchCount++;
+                if (scratchCount > 40) {
+                    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                    let transparent = 0;
+                    for (let i = 3; i < data.length; i += 16) if (data[i] < 128) transparent++;
+                    const ratio = transparent / (data.length / 16);
+                    if (ratio > 0.45) {
+                        revealed = true;
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        if (typeof confetti !== 'undefined') confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
+                        setTimeout(() => {
+                            document.getElementById('scratch-card-view').style.display = 'none';
+                            document.getElementById('success-view').style.display = 'block';
+                        }, 600);
+                    }
                 }
             };
 
-            canvas.onmousedown = canvas.ontouchstart = () => isDrawing = true;
-            window.onmouseup = window.ontouchend = () => isDrawing = false;
-            canvas.onmousemove = canvas.ontouchmove = scratch;
+            canvas.addEventListener('mousedown', () => isDrawing = true);
+            canvas.addEventListener('touchstart', (e) => { isDrawing = true; }, { passive: true });
+            window.addEventListener('mouseup', () => isDrawing = false);
+            window.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('mousemove', doScratch);
+            canvas.addEventListener('touchmove', doScratch, { passive: false });
         }
 
         function generateProtocolPDF() {
             const w = window.open('', '_blank');
-            w.document.write(`<html><body style="font-family:sans-serif;padding:50px;"><h1>Protocollo DigitalCore 2026</h1><p>Fase 1: Audit Abitudini</p><p>Fase 2: Centralizzazione Notion</p><p>Fase 3: Automazione Make</p><p>Fase 4: Scala con HighLevel</p><script>window.print();<\/script></body></html>`);
+            w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{font-family:sans-serif;padding:50px;max-width:700px;margin:0 auto}h1{color:#10b981;font-size:2em}h2{color:#020617;margin-top:30px}p{color:#475569;line-height:1.8}footer{margin-top:60px;font-size:11px;color:#94a3b8}</style></head><body><h1>Protocollo DigitalCore 2026</h1><p><em>Il tuo percorso verso automazione e serenità.</em></p><h2>Fase 1: Audit Abitudini</h2><p>Identifica le 3 attività che ti rubano più tempo ogni settimana. Scrivile. Analizzale.</p><h2>Fase 2: Centralizzazione con Notion</h2><p>Organizza progetti, contatti e idee in un unico workspace condiviso e accessibile ovunque.</p><h2>Fase 3: Automazione con Make</h2><p>Collega le tue app preferite e crea flussi automatici per eliminare le attività ripetitive.</p><h2>Fase 4: Scala con HighLevel</h2><p>Gestisci clienti, pipeline e comunicazioni in modo professionale da un'unica piattaforma.</p><footer>© 2026 DigitalCore — Protocollo Operativo Riservato</footer><script>setTimeout(()=>window.print(),500)<\/script></body></html>`);
             w.document.close();
         }
     </script>
