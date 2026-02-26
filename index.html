@@ -477,7 +477,15 @@
     </footer>
 
     <script>
+        // Force scroll to top on reload
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
         window.scrollTo(0, 0);
+        window.onload = () => {
+            setTimeout(() => window.scrollTo(0, 0), 10);
+        };
+        
         lucide.createIcons();
 
         // Mobile Menu Logic
@@ -557,6 +565,7 @@
             const canvas = document.getElementById('scratch-canvas');
             const ctx = canvas.getContext('2d');
             
+            // Set internal canvas resolution to match its display size
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
             
