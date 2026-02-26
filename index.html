@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it" class="scroll-smooth">
 <head>
@@ -8,21 +9,18 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
     <style>
         body { font-family: 'Inter', sans-serif; }
         .bg-dots { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 24px 24px; }
-        .glow-emerald { box-shadow: 0 0 40px rgba(16, 185, 129, 0.25); }
+        .glow-emerald { box-shadow: 0 0 50px rgba(16, 185, 129, 0.3); }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
-        
         #scratch-container { position: relative; width: 280px; height: 140px; margin: 0 auto; user-select: none; }
         #scratch-canvas { position: absolute; top: 0; left: 0; z-index: 20; border-radius: 12px; cursor: crosshair; }
         .prize-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f0fdf4; border: 2px dashed #10b981; border-radius: 12px; z-index: 10; padding: 15px; text-align: center; }
-
         @keyframes pulse-green {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
         }
         .pulse-live { animation: pulse-green 2s infinite; }
     </style>
@@ -37,19 +35,11 @@
             <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center shadow-lg">
                 <i data-lucide="zap" class="w-5 h-5 text-emerald-500"></i>
             </div>
-            <span class="font-black uppercase tracking-tighter text-lg hidden sm:block">Digital<span class="text-emerald-600">Core</span></span>
+            <span class="font-black uppercase tracking-tighter text-lg hidden sm:block text-zinc-900">Digital<span class="text-emerald-600">Core</span></span>
         </div>
-
         <div class="flex items-center gap-2 px-3 py-1.5 bg-zinc-50 border border-zinc-100 rounded-full">
             <div class="w-2 h-2 bg-emerald-500 rounded-full pulse-live"></div>
-            <span class="text-[9px] font-black uppercase tracking-widest text-zinc-500">
-                <span id="visitor-count" class="text-zinc-900">142</span> Online
-            </span>
-        </div>
-
-        <div class="flex gap-4 md:gap-8 text-[9px] font-black uppercase tracking-widest text-zinc-400">
-            <a href="#missione" class="hover:text-emerald-600 transition-colors">Missione</a>
-            <a href="#protocollo" class="hover:text-emerald-600 transition-colors">Protocollo</a>
+            <span class="text-[9px] font-black uppercase tracking-widest text-zinc-500"><span id="visitor-count" class="text-zinc-900">142</span> Online</span>
         </div>
     </nav>
 
@@ -58,23 +48,18 @@
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div class="lg:col-span-7">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-md mb-6 mx-auto lg:mx-0">
-                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700 italic text-center">Creato dai ragazzi per la community</span>
+                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700 italic">Creato dai ragazzi per la community</span>
                 </div>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-zinc-900 uppercase tracking-tighter leading-[0.85] mb-8">
                     Semplifica. <br><span class="text-emerald-600">Automatizza.</span> <br>Respira.
                 </h1>
-                
                 <p class="text-lg md:text-xl text-zinc-500 max-w-xl leading-relaxed mb-10 font-medium mx-auto lg:mx-0">
-                    Smetti di affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo e vogliamo condividerlo con te.
+                    Smetti di affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo.
                 </p>
-
                 <div id="contatti" class="bg-white p-2 rounded-xl border border-zinc-200 shadow-2xl max-w-lg mx-auto lg:mx-0 glow-emerald">
                     <script type="text/javascript">var submitted=false;</script>
                     <form action="https://7ebfd446.sibforms.com/serve/MUIFAHUWAWG73VRB7G83nrqV19fwedp9eQEhIZQ_sa0czgXYdQsFO2JC_24N4ptv5j4D3wlxQvpc--Z1p2fu0WKjHiI1Carqfjk6rJIvHQYtoYQqFBBk0mXr2cEgM2MFDuD5OJjddm2kJhWNKt0kVEGDen-2wh4djlG0o_5jzJ4cb_q5DIAlArytjRagUIZcXaK-HROmgXnNcQly0Q==" 
-                          method="POST" 
-                          target="hidden_iframe" 
-                          onsubmit="submitted=true;" 
-                          class="flex flex-col sm:flex-row gap-2">
+                          method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="flex flex-col sm:flex-row gap-2">
                         <input type="email" name="EMAIL" required placeholder="La tua migliore email" class="flex-1 h-14 px-6 bg-transparent focus:outline-none text-lg font-medium" />
                         <button type="submit" class="h-14 px-8 bg-zinc-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-emerald-600 transition-all rounded-lg flex items-center justify-center gap-2">
                             Prendi il Protocollo <i data-lucide="zap" class="w-4 h-4"></i>
@@ -82,25 +67,15 @@
                     </form>
                 </div>
             </div>
-
             <div class="lg:col-span-5">
                 <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 shadow-2xl text-left relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10"><i data-lucide="shield" size="100" class="text-emerald-500"></i></div>
                     <div class="relative z-10">
                         <h3 class="text-emerald-400 font-mono text-[10px] mb-6 uppercase tracking-widest">> System_Init...</h3>
                         <div class="space-y-4">
-                            <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center">
-                                <span class="text-white font-bold text-xs italic">01. Audit dello Stack</span>
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
-                            </div>
-                            <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center">
-                                <span class="text-white font-bold text-xs italic">02. Automazione Flussi</span>
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
-                            </div>
-                            <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg flex justify-between items-center">
-                                <span class="text-white font-bold text-xs italic">03. Fase Segreta (Locked)</span>
-                                <i data-lucide="lock" class="w-4 h-4 text-emerald-500"></i>
-                            </div>
+                            <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center"><span class="text-white font-bold text-xs italic">01. Audit dello Stack</span><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i></div>
+                            <div class="p-4 bg-zinc-800/50 border border-zinc-700 rounded-lg flex justify-between items-center"><span class="text-white font-bold text-xs italic">02. Automazione Flussi</span><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i></div>
+                            <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg flex justify-between items-center"><span class="text-white font-bold text-xs italic">03. Fase Segreta (Locked)</span><i data-lucide="lock" class="w-4 h-4 text-emerald-500"></i></div>
                         </div>
                     </div>
                 </div>
@@ -108,86 +83,11 @@
         </div>
     </section>
 
-    <!-- SEZIONE MISSIONE (VERDE) -->
-    <section id="missione" class="py-32 bg-emerald-600 text-white px-6 md:px-12 rounded-[3rem] mx-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-12 italic">Basta Caos. <br>Inizia a <span class="text-zinc-900 text-not-italic">Vivere.</span></h2>
-            <p class="text-emerald-50 text-xl md:text-2xl leading-relaxed font-medium mb-16">
-                Siamo ragazzi che hanno testato centinaia di tool sulla propria pelle. Abbiamo sbagliato, abbiamo perso tempo e abbiamo finalmente trovato la strada.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <h4 class="font-black uppercase mb-2">Verità</h4>
-                    <p class="text-xs text-emerald-100">Consigliamo solo quello che usiamo noi ogni giorno.</p>
-                </div>
-                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <h4 class="font-black uppercase mb-2">Libertà</h4>
-                    <p class="text-xs text-emerald-100">L'obiettivo finale è farti lavorare meno, non di più.</p>
-                </div>
-                <div class="p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
-                    <h4 class="font-black uppercase mb-2">Insieme</h4>
-                    <p class="text-xs text-emerald-100">Non sei solo. Siamo una community che cresce insieme.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEZIONE PROTOCOLLO -->
-    <section id="protocollo" class="py-32 px-6 md:px-12 max-w-7xl mx-auto text-center">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Il <span class="text-emerald-600">Protocollo</span></h2>
-            <p class="text-zinc-500 max-w-xl mx-auto font-medium">Tre passi semplici per riprenderti la tua vita digitale.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
-                    <i data-lucide="trash-2" class="text-emerald-600"></i>
-                </div>
-                <h4 class="text-xl font-black uppercase mb-4">01. Pulizia</h4>
-                <p class="text-zinc-500 text-sm leading-relaxed">Eliminiamo tutto quello che ti distrae e ti fa perdere tempo inutile.</p>
-            </div>
-            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
-                    <i data-lucide="link" class="text-emerald-600"></i>
-                </div>
-                <h4 class="text-xl font-black uppercase mb-4">02. Connessione</h4>
-                <p class="text-zinc-500 text-sm leading-relaxed">Colleghiamo i tuoi tool preferiti così non devi più copiare nulla.</p>
-            </div>
-            <div class="p-10 bg-white border border-zinc-100 rounded-3xl hover:shadow-xl transition-all">
-                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-8 mx-auto">
-                    <i data-lucide="coffee" class="text-emerald-600"></i>
-                </div>
-                <h4 class="text-xl font-black uppercase mb-4">03. Relax</h4>
-                <p class="text-zinc-500 text-sm leading-relaxed">Il sistema lavora, tu ti godi il tempo libero o ti concentri su quello che ami.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEZIONE ARMATURA (RISORSE) -->
-    <section id="risorse" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-100">
-        <h2 class="text-4xl font-black uppercase tracking-tighter mb-12 text-center">L' <span class="text-emerald-600">Armatura</span></h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
-                <i data-lucide="database" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
-                <h4 class="text-xl font-black uppercase mb-2">Notion</h4>
-                <p class="text-zinc-500 text-sm mb-6">Il cervello della tua azienda. Tutto in un unico posto.</p>
-                <a href="https://notion.so" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
-            </div>
-            <div class="p-8 bg-white border border-zinc-100 rounded-2xl hover:border-emerald-600 transition-all group">
-                <i data-lucide="workflow" class="w-8 h-8 mb-6 text-zinc-900 group-hover:text-emerald-600"></i>
-                <h4 class="text-xl font-black uppercase mb-2">Make.com</h4>
-                <p class="text-zinc-500 text-sm mb-6">Il sistema nervoso. Collega le app e automatizza tutto.</p>
-                <a href="https://make.com" target="_blank" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-emerald-600 pb-1">Configura</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODAL GRATTA E VINCI + SUSPENSE VIEW -->
+    <!-- MODAL GRATTA E VINCI -->
     <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/95 backdrop-blur-md p-6">
         <div id="scratch-card-view" class="bg-white p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
             <h3 class="text-2xl font-black uppercase mb-2 italic">Verifica Accesso 🛡️</h3>
-            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8 italic">Rimuovi il sigillo per convalidare l'email</p>
-            
+            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8 italic text-center">Rimuovi il sigillo per sbloccare il protocollo</p>
             <div id="scratch-container">
                 <div class="prize-content">
                     <span class="text-[9px] font-black uppercase text-emerald-600 mb-2">Accesso Convalidato:</span>
@@ -197,27 +97,17 @@
             </div>
         </div>
 
-        <!-- SUCCESS VIEW (Suspense & Email Push) -->
+        <!-- SUCCESS VIEW (Generatore PDF) -->
         <div id="success-view" class="hidden bg-white p-10 rounded-3xl max-w-md w-full text-center shadow-2xl border-4 border-emerald-500">
-            <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="shield-check" class="text-emerald-600 w-10 h-10"></i>
-            </div>
-            <h3 class="text-3xl font-black uppercase mb-4 italic leading-none">Accesso <br><span class="text-emerald-600">Garantito.</span></h3>
-            <p class="text-zinc-600 text-sm mb-8 font-medium">
-                Per proteggere il protocollo da download non autorizzati, abbiamo generato il tuo link personale. <br><br>
-                <span class="text-zinc-900 font-bold">Lo trovi ora nella tua casella email.</span>
-            </p>
+            <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="shield-check" class="text-emerald-600 w-10 h-10"></i></div>
+            <h3 class="text-3xl font-black uppercase mb-4 italic leading-none text-zinc-900 text-center">Accesso <br><span class="text-emerald-600">Garantito.</span></h3>
+            <p class="text-zinc-600 text-sm mb-8 font-medium text-center">Il sistema ha generato il tuo documento. Clicca sotto per scaricarlo all'istante.</p>
             
-            <div class="bg-zinc-50 p-6 rounded-2xl text-left mb-8 border border-zinc-100">
-                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">Procedura Obbligatoria:</p>
-                <ul class="space-y-3 text-xs font-bold text-zinc-700">
-                    <li class="flex items-center gap-3"><i data-lucide="mail-open" class="text-emerald-500 w-4 h-4"></i> Apri l'email da "DigitalCore"</li>
-                    <li class="flex items-center gap-3"><i data-lucide="star" class="text-emerald-500 w-4 h-4"></i> Spostala in "Principale" (Whitelist)</li>
-                    <li class="flex items-center gap-3"><i data-lucide="bell" class="text-emerald-500 w-4 h-4"></i> Attiva le notifiche per i consigli VIP</li>
-                </ul>
-            </div>
+            <button onclick="generateProtocolPDF()" class="block w-full py-5 bg-zinc-900 text-white font-black uppercase tracking-widest rounded-xl hover:bg-emerald-600 transition-all shadow-lg mb-6">
+                Scarica il PDF Ora <i data-lucide="download" class="w-4 h-4 inline ml-2"></i>
+            </button>
 
-            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest animate-pulse">Sincronizzazione con il server email...</p>
+            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest animate-pulse text-center">Documento pronto per il download...</p>
             <button onclick="closeModal()" class="mt-8 text-[10px] font-black uppercase tracking-widest text-zinc-300 hover:text-zinc-900 transition-colors">Torna al sito</button>
         </div>
     </div>
@@ -228,82 +118,83 @@
 
     <script>
         lucide.createIcons();
-
-        const ADVICES = [
-            "Il tuo primo passo: Fai l'audit dei software inutili.",
-            "Consiglio VIP: Automatizza i flussi di cassa per primi.",
-            "Segreto: Notion è il tuo cervello, Make è il tuo motore.",
-            "L'AI non è un gioco, è il tuo nuovo dipendente h24.",
-            "Regola d'oro: Se lo fai 2 volte, automatizzalo."
-        ];
-
+        const ADVICES = ["Audit dello stack: Se non ha API, eliminalo.", "Automatizza i flussi di cassa per primi.", "Centralizza tutto in Notion.", "L'AI sostituisce chi non la usa.", "Se lo fai 2 volte, automatizzalo."];
         let count = 142;
-        setInterval(() => {
-            count += Math.floor(Math.random() * 5) - 2;
-            if(count < 130) count = 135;
-            document.getElementById('visitor-count').innerText = count;
-        }, 3000);
-
-        function showScratchCard() {
-            document.getElementById('scratch-modal').classList.remove('hidden');
-            document.getElementById('scratch-card-view').classList.remove('hidden');
-            document.getElementById('success-view').classList.add('hidden');
-            document.getElementById('daily-advice').innerText = ADVICES[Math.floor(Math.random() * ADVICES.length)];
-            initScratch();
+        setInterval(() => { count += Math.floor(Math.random() * 5) - 2; document.getElementById('visitor-count').innerText = count; }, 3000);
+        
+        function showScratchCard() { 
+            document.getElementById('scratch-modal').classList.remove('hidden'); 
+            document.getElementById('scratch-card-view').classList.remove('hidden'); 
+            document.getElementById('success-view').classList.add('hidden'); 
+            document.getElementById('daily-advice').innerText = ADVICES[Math.floor(Math.random() * ADVICES.length)]; 
+            initScratch(); 
         }
-
-        function closeModal() {
-            document.getElementById('scratch-modal').classList.add('hidden');
-        }
-
+        
+        function closeModal() { document.getElementById('scratch-modal').classList.add('hidden'); }
+        
         function initScratch() {
-            const canvas = document.getElementById('scratch-canvas');
-            const ctx = canvas.getContext('2d');
-            let isDrawing = false;
-
-            ctx.fillStyle = '#d1d5db';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.font = 'bold 12px Inter';
-            ctx.fillStyle = '#9ca3af';
-            ctx.textAlign = 'center';
-            ctx.fillText('RIMUOVI IL SIGILLO DI SICUREZZA', canvas.width/2, canvas.height/2 + 5);
-
-            function scratch(e) {
-                if (!isDrawing) return;
-                const rect = canvas.getBoundingClientRect();
-                const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
-                const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.beginPath();
-                ctx.arc(x, y, 25, 0, Math.PI * 2);
-                ctx.fill();
-                checkScratch();
-            }
-
+            const canvas = document.getElementById('scratch-canvas'); const ctx = canvas.getContext('2d'); let isDrawing = false;
+            ctx.fillStyle = '#d1d5db'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = 'bold 12px Inter'; ctx.fillStyle = '#9ca3af'; ctx.textAlign = 'center'; ctx.fillText('RIMUOVI IL SIGILLO', canvas.width/2, canvas.height/2 + 5);
+            function scratch(e) { if (!isDrawing) return; const rect = canvas.getBoundingClientRect(); const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left; const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top; ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath(); ctx.arc(x, y, 25, 0, Math.PI * 2); ctx.fill(); checkScratch(); }
             function checkScratch() {
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                let count = 0;
-                for (let i = 0; i < imageData.data.length; i += 4) {
-                    if (imageData.data[i + 3] === 0) count++;
-                }
-                if (count > (imageData.data.length / 4) * 0.5) {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#10b981', '#ffffff'] });
-                    
-                    setTimeout(() => {
-                        document.getElementById('scratch-card-view').classList.add('hidden');
-                        document.getElementById('success-view').classList.remove('hidden');
-                        lucide.createIcons();
-                    }, 1000);
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height); let count = 0;
+                for (let i = 0; i < imageData.data.length; i += 4) { if (imageData.data[i + 3] === 0) count++; }
+                if (count > (imageData.data.length / 4) * 0.5) { 
+                    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#10b981', '#ffffff'] }); 
+                    setTimeout(() => { document.getElementById('scratch-card-view').classList.add('hidden'); document.getElementById('success-view').classList.remove('hidden'); lucide.createIcons(); }, 1000); 
                 }
             }
+            canvas.addEventListener('mousedown', () => isDrawing = true); canvas.addEventListener('touchstart', () => isDrawing = true);
+            window.addEventListener('mouseup', () => isDrawing = false); window.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('mousemove', scratch); canvas.addEventListener('touchmove', scratch);
+        }
 
-            canvas.addEventListener('mousedown', () => isDrawing = true);
-            canvas.addEventListener('touchstart', () => isDrawing = true);
-            window.addEventListener('mouseup', () => isDrawing = false);
-            window.addEventListener('touchend', () => isDrawing = false);
-            canvas.addEventListener('mousemove', scratch);
-            canvas.addEventListener('touchmove', scratch);
+        // GENERATORE DI PDF MAGICO
+        function generateProtocolPDF() {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Protocollo_DigitalCore_2026</title>
+                    <style>
+                        body { font-family: 'Helvetica', sans-serif; padding: 50px; color: #18181b; line-height: 1.6; }
+                        .header { border-bottom: 4px solid #10b981; padding-bottom: 20px; margin-bottom: 40px; }
+                        h1 { font-size: 40px; text-transform: uppercase; margin: 0; letter-spacing: -2px; }
+                        h2 { color: #10b981; text-transform: uppercase; font-size: 18px; margin-top: 40px; border-left: 4px solid #10b981; padding-left: 15px; }
+                        .step { background: #f4f4f5; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+                        .footer { margin-top: 60px; font-size: 10px; text-transform: uppercase; color: #a1a1aa; text-align: center; }
+                        @media print { .no-print { display: none; } }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1>DigitalCore</h1>
+                        <p>Protocollo Operativo 2026 | Semplifica. Automatizza. Respira.</p>
+                    </div>
+                    
+                    <h2>Fase 01: The Purge (L'Audit)</h2>
+                    <div class="step">
+                        <p>Elimina i software che non hanno API. Se non comunicano tra loro, sono un debito tecnico che ti ruba tempo e soldi. Tieni solo l'essenziale.</p>
+                    </div>
+
+                    <h2>Fase 02: The Brain (Notion)</h2>
+                    <div class="step">
+                        <p>Centralizza tutto in un unico database. I fogli Excel sparsi sono il cancro della scalabilità. Notion è il tuo comando centrale.</p>
+                    </div>
+
+                    <h2>Fase 03: The Engine (Make.com)</h2>
+                    <div class="step">
+                        <p>Collega i tuoi tool. Se un task richiede più di 10 minuti e lo fai ogni giorno, deve essere automatizzato. L'AI lavora, tu vivi.</p>
+                    </div>
+
+                    <div class="footer">© 2026 DigitalCore Community - Riservato ai membri</div>
+                    <script>window.onload = function() { window.print(); }</script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
         }
     </script>
 </body>
