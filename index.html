@@ -40,7 +40,6 @@
             <span class="font-black uppercase tracking-tighter text-lg hidden sm:block">Digital<span class="text-emerald-600">Core</span></span>
         </div>
 
-        <!-- CONTATORE LIVE -->
         <div class="flex items-center gap-2 px-3 py-1.5 bg-zinc-50 border border-zinc-100 rounded-full">
             <div class="w-2 h-2 bg-emerald-500 rounded-full pulse-live"></div>
             <span class="text-[9px] font-black uppercase tracking-widest text-zinc-500">
@@ -59,14 +58,14 @@
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div class="lg:col-span-7">
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-100 rounded-md mb-6 mx-auto lg:mx-0">
-                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700 italic">Creato dai ragazzi per la community</span>
+                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-700 italic text-center">Creato dai ragazzi per la community</span>
                 </div>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-zinc-900 uppercase tracking-tighter leading-[0.85] mb-8">
                     Semplifica. <br><span class="text-emerald-600">Automatizza.</span> <br>Respira.
                 </h1>
                 
                 <p class="text-lg md:text-xl text-zinc-500 max-w-xl leading-relaxed mb-10 font-medium mx-auto lg:mx-0">
-                    Siamo stanchi di vedere persone affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo.
+                    Smetti di affogare tra mille tool. Abbiamo creato un protocollo per riprenderci il nostro tempo e vogliamo condividerlo con te.
                 </p>
 
                 <div id="contatti" class="bg-white p-2 rounded-xl border border-zinc-200 shadow-2xl max-w-lg mx-auto lg:mx-0 glow-emerald">
@@ -186,12 +185,12 @@
     <!-- MODAL GRATTA E VINCI + SUSPENSE VIEW -->
     <div id="scratch-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/95 backdrop-blur-md p-6">
         <div id="scratch-card-view" class="bg-white p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
-            <h3 class="text-2xl font-black uppercase mb-2 italic">Il tuo Bonus 🌟</h3>
-            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8 italic">Grata per sbloccare l'accesso</p>
+            <h3 class="text-2xl font-black uppercase mb-2 italic">Verifica Accesso 🛡️</h3>
+            <p class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-8 italic">Rimuovi il sigillo per convalidare l'email</p>
             
             <div id="scratch-container">
                 <div class="prize-content">
-                    <span class="text-[9px] font-black uppercase text-emerald-600 mb-2">Consiglio Strategico:</span>
+                    <span class="text-[9px] font-black uppercase text-emerald-600 mb-2">Accesso Convalidato:</span>
                     <span id="daily-advice" class="text-sm font-bold text-zinc-900 leading-tight italic">Caricamento...</span>
                 </div>
                 <canvas id="scratch-canvas" width="280" height="140"></canvas>
@@ -201,25 +200,25 @@
         <!-- SUCCESS VIEW (Suspense & Email Push) -->
         <div id="success-view" class="hidden bg-white p-10 rounded-3xl max-w-md w-full text-center shadow-2xl border-4 border-emerald-500">
             <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="mail-warning" class="text-emerald-600 w-10 h-10"></i>
+                <i data-lucide="shield-check" class="text-emerald-600 w-10 h-10"></i>
             </div>
-            <h3 class="text-3xl font-black uppercase mb-4 italic leading-none">Bloccato al <br><span class="text-emerald-600">99%...</span></h3>
+            <h3 class="text-3xl font-black uppercase mb-4 italic leading-none">Accesso <br><span class="text-emerald-600">Garantito.</span></h3>
             <p class="text-zinc-600 text-sm mb-8 font-medium">
-                Il Protocollo e le Automazioni Segrete sono troppo pesanti per il browser. <br><br>
-                <span class="text-zinc-900 font-bold">Abbiamo appena inviato tutto alla tua email.</span>
+                Per proteggere il protocollo da download non autorizzati, abbiamo generato il tuo link personale. <br><br>
+                <span class="text-zinc-900 font-bold">Lo trovi ora nella tua casella email.</span>
             </p>
             
             <div class="bg-zinc-50 p-6 rounded-2xl text-left mb-8 border border-zinc-100">
-                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">Istruzioni Obbligatorie:</p>
+                <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">Procedura Obbligatoria:</p>
                 <ul class="space-y-3 text-xs font-bold text-zinc-700">
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-emerald-500 w-4 h-4"></i> Apri l'email da "DigitalCore"</li>
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-emerald-500 w-4 h-4"></i> Spostala in "Principale"</li>
-                    <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-emerald-500 w-4 h-4"></i> Salva il contatto (Consigli VIP)</li>
+                    <li class="flex items-center gap-3"><i data-lucide="mail-open" class="text-emerald-500 w-4 h-4"></i> Apri l'email da "DigitalCore"</li>
+                    <li class="flex items-center gap-3"><i data-lucide="star" class="text-emerald-500 w-4 h-4"></i> Spostala in "Principale" (Whitelist)</li>
+                    <li class="flex items-center gap-3"><i data-lucide="bell" class="text-emerald-500 w-4 h-4"></i> Attiva le notifiche per i consigli VIP</li>
                 </ul>
             </div>
 
-            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest animate-pulse">In attesa di apertura email...</p>
-            <button onclick="closeModal()" class="mt-8 text-[10px] font-black uppercase tracking-widest text-zinc-300 hover:text-zinc-900 transition-colors">Chiudi questa finestra</button>
+            <p class="text-[9px] text-zinc-400 uppercase font-black tracking-widest animate-pulse">Sincronizzazione con il server email...</p>
+            <button onclick="closeModal()" class="mt-8 text-[10px] font-black uppercase tracking-widest text-zinc-300 hover:text-zinc-900 transition-colors">Torna al sito</button>
         </div>
     </div>
 
@@ -231,11 +230,11 @@
         lucide.createIcons();
 
         const ADVICES = [
-            "Elimina i software senza API. Sono un debito tecnico.",
-            "Automatizza prima i flussi di cassa. Vale il doppio.",
-            "Centralizza tutto in Notion. I file sparsi sono il male.",
-            "L'AI sostituisce chi non la usa. Inizia oggi.",
-            "Task ripetitivo > 10 min? Automatizzalo subito."
+            "Il tuo primo passo: Fai l'audit dei software inutili.",
+            "Consiglio VIP: Automatizza i flussi di cassa per primi.",
+            "Segreto: Notion è il tuo cervello, Make è il tuo motore.",
+            "L'AI non è un gioco, è il tuo nuovo dipendente h24.",
+            "Regola d'oro: Se lo fai 2 volte, automatizzalo."
         ];
 
         let count = 142;
@@ -267,7 +266,7 @@
             ctx.font = 'bold 12px Inter';
             ctx.fillStyle = '#9ca3af';
             ctx.textAlign = 'center';
-            ctx.fillText('GRATTA PER IL PROTOCOLLO', canvas.width/2, canvas.height/2 + 5);
+            ctx.fillText('RIMUOVI IL SIGILLO DI SICUREZZA', canvas.width/2, canvas.height/2 + 5);
 
             function scratch(e) {
                 if (!isDrawing) return;
